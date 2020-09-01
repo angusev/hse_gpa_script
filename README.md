@@ -4,7 +4,7 @@
 
 ```
 pip install beautifulsoup4
-python script.py
+python gpa.py
 ```
 
 Также есть флаги:
