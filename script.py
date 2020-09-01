@@ -17,17 +17,17 @@ def get_gpa(soup, scale=10):
     total_credits = 0
 
     for i in range(len(table_elems)):
-    	if table_elems[i].name == 'tr':
+        if table_elems[i].name == 'tr':
             subject_tags = list(table_elems[i].children)
             for j in range(len(subject_tags)):
 
                 if subject_tags[j].string in WORD2MARK.keys() and subject_tags[j-2].string:
-	                if scale == 10:
-	                    mark = int(subject_tags[j-2].string)
-	                elif scale == 5:
-	                    mark = WORD2MARK[subject_tags[j].string]
-	                else:
-	                	raise ValueError('Unknown scale')
+                    if scale == 10:
+                        mark = int(subject_tags[j-2].string)
+                    elif scale == 5:
+                        mark = WORD2MARK[subject_tags[j].string]
+                    else:
+                        raise ValueError('Unknown scale')
 
                     credits = int(subject_tags[j-3].string)
                     gpa += mark * credits
