@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--filename', '-f', type=str, default='LMS HSE.html')
-    parser.add_argument('--scale', type=float, default=10.)
+    parser.add_argument('--scale', type=float, default=5.)
     args = parser.parse_args()
 
     with open(args.filename, 'r') as f:
