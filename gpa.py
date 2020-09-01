@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import argparse
+from os import listdir
+from os.path import isfile, join
 
 
 WORD2MARK = {'отлично': 5,
@@ -67,7 +69,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.newdesign:
-        files = ['1.html', '2.html', '3.html']
+        files = [f for f in listdir(args.folder) if isfile(join(args.folder, f))]
         gpa5 = 0.
         gpa10 = 0.
         total_credits = 0
