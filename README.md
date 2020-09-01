@@ -3,6 +3,7 @@
 Скрипт необходимо сохранить рядом с `.html` файлом зачетки из LMS. Пример запуска:
 
 ```
+pip install beautifulsoup4
 python script.py
 ```
 
