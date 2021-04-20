@@ -43,7 +43,11 @@ def get_gpas(soup, newdesign):
                         mark10 = int(str_mark10)
                         mark5 = WORD2MARK[str_mark5]
 
-                        credits = int(subject_tags[j - CRED_DIF].string)
+                        try:
+                            credits = int(subject_tags[j - CRED_DIF].string)
+                        except:
+                            credits = 0
+                            
                         gpa5 += mark5 * credits
                         gpa10 += mark10 * credits
                         total_credits += credits
